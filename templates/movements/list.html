@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Movements</title>
+</head>
+<body>
+
+<h2>Product Movements</h2>
+
+<a href="/movements/add">Add Movement</a>
+
+<table border="1" cellpadding="5">
+    <tr>
+        <th>Movement ID</th>
+        <th>Product</th>
+        <th>From Location</th>
+        <th>To Location</th>
+        <th>Quantity</th>
+    </tr>
+
+    {% for m in movements %}
+    <tr>
+        <td>{{ m.movement_id }}</td>
+        <td>{{ m.product_id }}</td>
+        <td>{{ m.from_location or "-" }}</td>
+        <td>{{ m.to_location or "-" }}</td>
+        <td>{{ m.qty }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<br>
+<a href="/products">Products</a> |
+<a href="/locations">Locations</a>
+
+</body>
+</html>

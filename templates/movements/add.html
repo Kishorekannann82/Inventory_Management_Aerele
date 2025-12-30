@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Movement</title>
+</head>
+<body>
+
+<h2>Add Product Movement</h2>
+
+<form method="post">
+
+    <label>Movement ID:</label><br>
+    <input type="text" name="movement_id"><br><br>
+
+    <label>Product ID:</label><br>
+    <input type="text" name="product_id"><br><br>
+
+    <label>From Location:</label><br>
+    <input type="text" name="from_location"><br><br>
+
+    <label>To Location:</label><br>
+    <input type="text" name="to_location"><br><br>
+
+    <label>Quantity:</label><br>
+    <input type="number" name="qty"><br><br>
+
+    <button type="submit">Add Movement</button>
+</form>
+
+<p>
+<b>Note:</b><br>
+• Fill only <b>To Location</b> → Stock IN<br>
+• Fill only <b>From Location</b> → Stock OUT<br>
+• Fill both → Transfer
+</p>
+
+<br>
+<a href="/movements">Back to Movements</a>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inventory Report</title>
+</head>
+<body>
+
+<h2>Inventory Balance Report</h2>
+
+<table border="1" cellpadding="6">
+    <tr>
+        <th>Product</th>
+        <th>Warehouse</th>
+        <th>Quantity</th>
+    </tr>
+
+    {% for row in report %}
+    <tr>
+        <td>{{ row.product_name }}</td>
+        <td>{{ row.location_name }}</td>
+        <td>{{ row.qty }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<br>
+<a href="/products">Products</a> |
+<a href="/locations">Locations</a> |
+<a href="/movements">Movements</a>
+
+</body>
+</html>
