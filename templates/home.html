@@ -1,22 +1,30 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Inventory Management System</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-<h1>Inventory Management System</h1>
+{% block body_class %}home-page{% endblock %}
 
-<p>Welcome! Use the links below to manage inventory.</p>
+{% block content %}
 
-<hr>
+<div class="home-card">
+    <h1>Inventory Management System</h1>
 
-<ul>
-    <li><a href="/products">Manage Products</a></li>
-    <li><a href="/locations">Manage Locations</a></li>
-    <li><a href="/movements">Manage Product Movements</a></li>
-    <li><a href="/report">View Inventory Report</a></li>
-</ul>
+    <p>
+        Welcome to <strong>Kishorelytics Inventory Platform</strong>.
+        This system helps you manage products, warehouses, and inventory
+        movements using a professional movement-based model.
+    </p>
 
-</body>
-</html>
+    <p>
+        Track stock accurately across multiple locations with complete
+        movement history and real-time balance reporting.
+    </p>
+
+    <!-- ACTION BUTTONS -->
+    <div class="home-actions">
+        <a href="/products/add">➕ Add Product</a>
+        <a href="/locations/add">🏬 Add Location</a>
+        <a href="/movements/add">🔄 Add Movement</a>
+        <a href="/report">📊 View Report</a>
+    </div>
+</div>
+
+{% endblock %}

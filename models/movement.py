@@ -1,15 +1,14 @@
-from . import db
+from models import db
 from datetime import datetime
 
 class ProductMovement(db.Model):
-    __tablename__ = "product_movements"
+    __tablename__ = "product_movements"  # ✅ ADD THIS
 
     movement_id = db.Column(db.String, primary_key=True)
-    timestamp = db.Column(db.DateTime, default=datetime.utcnow)
 
     product_id = db.Column(
         db.String,
-        db.ForeignKey("products.product_id"),
+        db.ForeignKey("products.product_id"),  # ✅ NOW MATCHES
         nullable=False
     )
 
@@ -26,9 +25,4 @@ class ProductMovement(db.Model):
     )
 
     qty = db.Column(db.Integer, nullable=False)
-
-    def __repr__(self):
-        return (
-            f"<Movement {self.movement_id} | "
-            f"Product {self.product_id} | Qty {self.qty}>"
-        )
+    timestamp = db.Column(db.DateTime, default=datetime.utcnow)

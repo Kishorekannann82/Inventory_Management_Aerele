@@ -1,13 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Inventory Report</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-<h2>Inventory Balance Report</h2>
+{% block content %}
 
-<table border="1" cellpadding="6">
+<h2>Inventory Report</h2>
+
+<table>
     <tr>
         <th>Product</th>
         <th>Warehouse</th>
@@ -23,10 +20,4 @@
     {% endfor %}
 </table>
 
-<br>
-<a href="/products">Products</a> |
-<a href="/locations">Locations</a> |
-<a href="/movements">Movements</a>
-
-</body>
-</html>
+{% endblock %}

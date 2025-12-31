@@ -1,27 +1,29 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Products</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block content %}
 
 <h2>Products</h2>
 
-<a href="/products/add">Add Product</a>
+<a href="/products/add" class="btn">➕ Add Product</a>
 
-<table border="1" cellpadding="5">
+<table>
     <tr>
         <th>Product ID</th>
         <th>Name</th>
+        <th>Description</th>
+        <th>Action</th>
     </tr>
 
     {% for p in products %}
     <tr>
         <td>{{ p.product_id }}</td>
         <td>{{ p.name }}</td>
+        <td>{{ p.description }}</td>
+        <td>
+            <a href="/products/edit/{{ p.product_id }}" class="btn">Edit</a>
+        </td>
     </tr>
     {% endfor %}
 </table>
 
-</body>
-</html>
+{% endblock %}

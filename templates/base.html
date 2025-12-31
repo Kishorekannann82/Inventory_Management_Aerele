@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inventory Management System</title>
+
+    <!-- Static CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="{% block body_class %}{% endblock %}">
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="/" class="brand">Kishorelytics</a>
+        </div>
+
+        <div class="nav-right">
+            <a href="/">Home</a>
+            <a href="/products">Products</a>
+            <a href="/locations">Locations</a>
+            <a href="/movements">Movements</a>
+            <a href="/report">Report</a>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+
+</body>
+</html>

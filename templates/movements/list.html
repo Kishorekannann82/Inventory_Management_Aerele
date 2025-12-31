@@ -1,37 +1,33 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Product Movements</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block content %}
 
 <h2>Product Movements</h2>
 
-<a href="/movements/add">Add Movement</a>
+<a href="/movements/add" class="btn">➕ Add Movement</a>
 
-<table border="1" cellpadding="5">
+<table>
     <tr>
         <th>Movement ID</th>
         <th>Product</th>
-        <th>From Location</th>
-        <th>To Location</th>
-        <th>Quantity</th>
+        <th>From</th>
+        <th>To</th>
+        <th>Qty</th>
+        <th>Action</th>
     </tr>
 
     {% for m in movements %}
     <tr>
         <td>{{ m.movement_id }}</td>
         <td>{{ m.product_id }}</td>
-        <td>{{ m.from_location or "-" }}</td>
-        <td>{{ m.to_location or "-" }}</td>
+        <td>{{ m.from_location if m.from_location else "-" }}</td>
+        <td>{{ m.to_location if m.to_location else "-" }}</td>
         <td>{{ m.qty }}</td>
+        <td>
+            <a href="/movements/edit/{{ m.movement_id }}" class="btn">Edit</a>
+        </td>
     </tr>
     {% endfor %}
 </table>
 
-<br>
-<a href="/products">Products</a> |
-<a href="/locations">Locations</a>
-
-</body>
-</html>
+{% endblock %}

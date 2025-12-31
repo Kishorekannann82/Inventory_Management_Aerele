@@ -1,24 +1,24 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Add Product</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block content %}
 
 <h2>Add Product</h2>
 
 <form method="post">
-    <label>Product ID:</label><br>
-    <input type="text" name="product_id"><br><br>
+    <label for="product_id">Product ID</label>
+    <input type="text" name="product_id" id="product_id" required>
 
-    <label>Product Name:</label><br>
-    <input type="text" name="name"><br><br>
+    <label for="name">Product Name</label>
+    <input type="text" name="name" id="name" required>
 
-    <button type="submit">Add Product</button>
+    <label for="description">Description</label>
+    <input type="text" name="description" id="description">
+
+    <button type="submit" class="btn">Save Product</button>
 </form>
 
-<br>
-<a href="/products">Back to Products</a>
+<div style="margin-top:16px; text-align:center;">
+    <a href="/products" class="btn">View Products</a>
+</div>
 
-</body>
-</html>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Edit Location</h2>
+
+<form method="post">
+    <label>Location ID</label>
+    <input type="text" value="{{ location.location_id }}" disabled>
+
+    <label>Location Name</label>
+    <input type="text" name="name" value="{{ location.name }}" required>
+
+    <button type="submit" class="btn">Update Location</button>
+</form>
+
+<div style="margin-top:16px; text-align:center;">
+    <a href="/locations" class="btn">View Locations</a>
+</div>
+
+{% endblock %}

@@ -2,17 +2,19 @@
 
 {% block content %}
 
-<h2>Add Product Movement</h2>
+<h2>Edit Product Movement</h2>
 
 <form method="post">
     <label>Movement ID</label>
-    <input type="text" name="movement_id" required>
+    <input type="text" value="{{ movement.movement_id }}" disabled>
 
     <label>Product</label>
     <select name="product_id" required>
-        <option value="">-- Select Product --</option>
         {% for p in products %}
-        <option value="{{ p.product_id }}">{{ p.name }}</option>
+        <option value="{{ p.product_id }}"
+            {% if p.product_id == movement.product_id %}selected{% endif %}>
+            {{ p.name }}
+        </option>
         {% endfor %}
     </select>
 
@@ -20,7 +22,10 @@
     <select name="from_location">
         <option value="">-- None --</option>
         {% for l in locations %}
-        <option value="{{ l.location_id }}">{{ l.name }}</option>
+        <option value="{{ l.location_id }}"
+            {% if l.location_id == movement.from_location %}selected{% endif %}>
+            {{ l.name }}
+        </option>
         {% endfor %}
     </select>
 
@@ -28,25 +33,21 @@
     <select name="to_location">
         <option value="">-- None --</option>
         {% for l in locations %}
-        <option value="{{ l.location_id }}">{{ l.name }}</option>
+        <option value="{{ l.location_id }}"
+            {% if l.location_id == movement.to_location %}selected{% endif %}>
+            {{ l.name }}
+        </option>
         {% endfor %}
     </select>
 
     <label>Quantity</label>
-    <input type="number" name="qty" min="1" required>
+    <input type="number" name="qty" value="{{ movement.qty }}" min="1" required>
 
-    <button type="submit" class="btn">Save Movement</button>
+    <button type="submit" class="btn">Update Movement</button>
 </form>
 
 <div style="margin-top:16px; text-align:center;">
     <a href="/movements" class="btn">View Movements</a>
 </div>
-
-<p style="margin-top:12px;font-size:14px;">
-<b>Note:</b><br>
-• Stock IN → select only <b>To Location</b><br>
-• Stock OUT → select only <b>From Location</b><br>
-• Transfer → select both
-</p>
 
 {% endblock %}

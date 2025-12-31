@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Edit Product</h2>
+
+<form method="post">
+    <label>Product ID</label>
+    <input type="text" value="{{ product.product_id }}" disabled>
+
+    <label>Product Name</label>
+    <input type="text" name="name" value="{{ product.name }}" required>
+
+    <label>Description</label>
+    <input type="text" name="description" value="{{ product.description }}">
+
+    <button type="submit" class="btn">Update Product</button>
+</form>
+
+<div style="margin-top:16px; text-align:center;">
+    <a href="/products" class="btn">View Products</a>
+</div>
+
+{% endblock %}

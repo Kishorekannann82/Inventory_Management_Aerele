@@ -1,24 +1,21 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Add Location</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block content %}
 
 <h2>Add Location</h2>
 
 <form method="post">
-    <label>Location ID:</label><br>
-    <input type="text" name="location_id"><br><br>
+    <label for="location_id">Location ID</label>
+    <input type="text" name="location_id" id="location_id" required>
 
-    <label>Location Name:</label><br>
-    <input type="text" name="name"><br><br>
+    <label for="name">Location Name</label>
+    <input type="text" name="name" id="name" required>
 
-    <button type="submit">Add Location</button>
+    <button type="submit" class="btn">Save Location</button>
 </form>
 
-<br>
-<a href="/locations">Back to Locations</a>
+<div style="margin-top:16px; text-align:center;">
+    <a href="/locations" class="btn">View Locations</a>
+</div>
 
-</body>
-</html>
+{% endblock %}

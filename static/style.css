@@ -1,0 +1,194 @@
+/* ===============================
+   DESIGN TOKENS
+================================ */
+:root {
+  --primary: #2f5d62;
+  --secondary-bg: #f4f7f8;
+  --accent: #ff8c00;
+  --accent-hover: #e67e00;
+  --text-dark: #2c2c2c;
+  --text-light: #ffffff;
+  --border-light: #e0e0e0;
+  --shadow-soft: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+/* ===============================
+   GLOBAL RESET
+================================ */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  background: var(--secondary-bg);
+  color: var(--text-dark);
+  min-height: 100vh;
+}
+
+/* ===============================
+   NAVBAR
+================================ */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--primary);
+  padding: 14px 30px;
+}
+
+.nav-left .brand {
+  color: var(--text-light);
+  font-size: 22px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.nav-right a {
+  color: var(--text-light);
+  text-decoration: none;
+  margin-left: 18px;
+  font-weight: 600;
+}
+
+.nav-right a:hover {
+  color: var(--accent);
+}
+
+/* ===============================
+   MAIN CONTAINER
+================================ */
+.container {
+  padding: 32px;
+}
+
+/* ===============================
+   HEADINGS
+================================ */
+h1, h2 {
+  margin-top: 0;
+  color: var(--primary);
+}
+
+/* ===============================
+   TABLES
+================================ */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  margin-top: 16px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+}
+
+th, td {
+  padding: 12px;
+  border: 1px solid var(--border-light);
+  text-align: center;
+}
+
+th {
+  background: var(--primary);
+  color: var(--text-light);
+}
+
+/* ===============================
+   BUTTONS
+================================ */
+.btn {
+  background: var(--accent);
+  color: var(--text-light);
+  padding: 10px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.btn:hover {
+  background: var(--accent-hover);
+}
+
+/* ===============================
+   FORMS
+================================ */
+form {
+  background: #ffffff;
+  padding: 24px;
+  max-width: 600px;
+  margin: auto;
+  border-radius: 10px;
+  box-shadow: var(--shadow-soft);
+}
+
+form label {
+  display: block;
+  margin-top: 14px;
+  font-weight: 600;
+}
+
+form input, form select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border-radius: 6px;
+  border: 1px solid var(--border-light);
+}
+
+form button {
+  margin-top: 20px;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+}
+
+/* ===============================
+   HOME PAGE BACKGROUND
+================================ */
+body.home-page {
+  background-image: url("/static/bg.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+/* ===============================
+   HOME CARD
+================================ */
+.home-card {
+  max-width: 850px;
+  margin: 80px auto;
+  background: rgba(255, 255, 255, 0.92);
+  padding: 36px 42px;
+  border-radius: 16px;
+  box-shadow: var(--shadow-soft);
+  text-align: center;
+}
+
+/* ===============================
+   HOME ACTION BUTTONS
+================================ */
+.home-actions {
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.home-actions a {
+  background: var(--accent);
+  color: var(--text-light);
+  padding: 12px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.home-actions a:hover {
+  background: var(--accent-hover);
+}
