@@ -23,14 +23,13 @@ def create_app():
     def home():
         return render_template("home.html")
 
-    # 🔴 THIS WAS MISSING
+    
     return app
 
 
 if __name__ == "__main__":
     app = create_app()
 
-    # create tables (learning stage only)
     with app.app_context():
         db.create_all()
 

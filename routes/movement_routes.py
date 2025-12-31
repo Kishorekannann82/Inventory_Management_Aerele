@@ -3,18 +3,15 @@ from models import db, Product, Location, ProductMovement
 
 movement_bp = Blueprint("movement_bp", __name__)
 
-# ----------------------------
+
 # VIEW MOVEMENTS
-# ----------------------------
 @movement_bp.route("/movements")
 def list_movements():
     movements = ProductMovement.query.order_by(ProductMovement.timestamp.desc()).all()
     return render_template("movements/list.html", movements=movements)
 
-
-# ----------------------------
 # ADD MOVEMENT
-# ----------------------------
+
 @movement_bp.route("/movements/add", methods=["GET", "POST"])
 def add_movement():
     products = Product.query.all()
@@ -62,9 +59,8 @@ def add_movement():
     )
 
 
-# ----------------------------
 # EDIT MOVEMENT
-# ----------------------------
+
 @movement_bp.route("/movements/edit/<movement_id>", methods=["GET", "POST"])
 def edit_movement(movement_id):
     movement = ProductMovement.query.get_or_404(movement_id)

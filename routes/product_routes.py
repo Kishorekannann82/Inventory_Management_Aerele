@@ -3,18 +3,15 @@ from models import db, Product
 
 product_bp = Blueprint("product_bp", __name__)
 
-# ----------------------------
 # VIEW PRODUCTS
-# ----------------------------
+
 @product_bp.route("/products")
 def list_products():
     products = Product.query.order_by(Product.product_id).all()
     return render_template("products/list.html", products=products)
 
 
-# ----------------------------
 # ADD PRODUCT
-# ----------------------------
 @product_bp.route("/products/add", methods=["GET", "POST"])
 def add_product():
     if request.method == "POST":
@@ -26,7 +23,7 @@ def add_product():
             flash("Product ID and Name are required.")
             return redirect(url_for("product_bp.add_product"))
 
-        # check duplicate
+        
         existing = Product.query.get(product_id)
         if existing:
             flash("Product ID already exists.")
@@ -47,9 +44,9 @@ def add_product():
     return render_template("products/add.html")
 
 
-# ----------------------------
+
 # EDIT PRODUCT
-# ----------------------------
+
 @product_bp.route("/products/edit/<product_id>", methods=["GET", "POST"])
 def edit_product(product_id):
     product = Product.query.get_or_404(product_id)

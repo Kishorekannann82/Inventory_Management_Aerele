@@ -2,13 +2,13 @@ from models import db
 from datetime import datetime
 
 class ProductMovement(db.Model):
-    __tablename__ = "product_movements"  # ✅ ADD THIS
+    __tablename__ = "product_movements"  
 
     movement_id = db.Column(db.String, primary_key=True)
 
     product_id = db.Column(
         db.String,
-        db.ForeignKey("products.product_id"),  # ✅ NOW MATCHES
+        db.ForeignKey("products.product_id"),  
         nullable=False
     )
 

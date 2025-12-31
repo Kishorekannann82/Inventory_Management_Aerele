@@ -3,18 +3,15 @@ from models import db, Location
 
 location_bp = Blueprint("location_bp", __name__)
 
-# ----------------------------
 # VIEW LOCATIONS
-# ----------------------------
 @location_bp.route("/locations")
 def list_locations():
     locations = Location.query.order_by(Location.location_id).all()
     return render_template("locations/list.html", locations=locations)
 
 
-# ----------------------------
 # ADD LOCATION
-# ----------------------------
+
 @location_bp.route("/locations/add", methods=["GET", "POST"])
 def add_location():
     if request.method == "POST":
@@ -44,9 +41,9 @@ def add_location():
     return render_template("locations/add.html")
 
 
-# ----------------------------
+
 # EDIT LOCATION
-# ----------------------------
+
 @location_bp.route("/locations/edit/<location_id>", methods=["GET", "POST"])
 def edit_location(location_id):
     location = Location.query.get_or_404(location_id)

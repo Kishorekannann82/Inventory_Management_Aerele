@@ -34,7 +34,7 @@ def inventory_report():
             "qty": qty
         })
 
-    # Sort for clean display
+    
     report_rows.sort(key=lambda r: (r["product_name"], r["location_name"]))
 
     return render_template("report/inventory.html", report=report_rows)
